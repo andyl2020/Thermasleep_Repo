@@ -31,13 +31,13 @@
     <AppXManifest Include="C:\Users\denni\OneDrive\Documents\Year 3\Term 2\IGEN 330\Thermasleep_Repo\Data collector\Microsoft Band Sensors - Simple Universal Windows App\C#\BandSensors\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-03-11T00:43:10.702</Modified>
+      <Modified>2018-03-11T04:57:16.387</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\denni\OneDrive\Documents\Year 3\Term 2\IGEN 330\Thermasleep_Repo\Data collector\Microsoft Band Sensors - Simple Universal Windows App\C#\BandSensors\bin\x86\Debug\BandSensors.exe">
       <PackagePath>entrypoint\BandSensors.exe</PackagePath>
-      <Modified>2018-03-11T00:43:03.637</Modified>
+      <Modified>2018-03-11T04:57:15.039</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\denni\.nuget\packages\microsoft.applicationinsights\1.0.0\lib\portable-win81+wpa81\Microsoft.ApplicationInsights.dll">
       <PackagePath>Microsoft.ApplicationInsights.dll</PackagePath>
@@ -552,11 +552,11 @@
     <AppxPackagedFile Include="C:\Users\denni\OneDrive\Documents\Year 3\Term 2\IGEN 330\Thermasleep_Repo\Data collector\Microsoft Band Sensors - Simple Universal Windows App\C#\BandSensors\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-03-11T00:43:09.874</Modified>
+      <Modified>2018-03-11T01:26:13.495</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\denni\OneDrive\Documents\Year 3\Term 2\IGEN 330\Thermasleep_Repo\Data collector\Microsoft Band Sensors - Simple Universal Windows App\C#\BandSensors\bin\x86\Debug\Core\BandSensors.exe">
       <PackagePath>BandSensors.exe</PackagePath>
-      <Modified>2018-03-11T00:43:10.683</Modified>
+      <Modified>2018-03-11T04:57:16.311</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

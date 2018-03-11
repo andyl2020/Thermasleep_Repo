@@ -78,6 +78,7 @@ namespace BandSensors
                     int samplesReceivedPed = 0; // the number of Pedometer samples received
                     int samplesReceivedST = 0; // the number of SkinTemperature samples received
                     int samplesReceivedUV = 0; // the number of UV samples received
+                    double SkinTempFinal = 0; 
 
                     // Subscribe to Accelerometer data.
                     bandClient.SensorManager.Accelerometer.ReadingChanged += (s, args) =>
@@ -176,8 +177,12 @@ namespace BandSensors
                     {
                         samplesReceivedST++;
                         IBandSkinTemperatureReading readings = args.SensorReading;
+                        
                         CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => {
                             this.txtSkinTemp.Text = readings.Temperature.ToString();
+                            SkinTempFinal = readings.Temperature;
+
+
                         });
                     };
                     await bandClient.SensorManager.SkinTemperature.StartReadingsAsync();
@@ -208,7 +213,7 @@ namespace BandSensors
                     await bandClient.SensorManager.SkinTemperature.StopReadingsAsync();
                     await bandClient.SensorManager.UV.StopReadingsAsync();
 
-                    this.StatusMessage.Text = string.Format("Done.\n {0} Accelerometer samples received.\n {1} Calories samples received.\n {2} Contact samples received.\n {3} Distance samples received.\n {4} Gyroscope samples received.\n {5} HeartRate samples received.\n {6} Pedometer samples received.\n {7} SkinTemperature samples received.\n {8} UV samples received.", samplesReceivedAcc, samplesReceivedCal, samplesReceivedCon, samplesReceivedDist, samplesReceivedGyro, samplesReceivedHR, samplesReceivedPed, samplesReceivedST, samplesReceivedUV);
+                    this.StatusMessage.Text = string.Format("Done.\n {0} Accelerometer samples received.\n {1} Calories samples received.\n {2} Contact samples received.\n {3} Distance samples received.\n {4} Gyroscope samples received.\n {5} HeartRate samples received.\n {6} Pedometer samples received.\n {7} SkinTemperature samples received.\n {8} UV samples received.\n skintemp data {9} ", samplesReceivedAcc, samplesReceivedCal, samplesReceivedCon, samplesReceivedDist, samplesReceivedGyro, samplesReceivedHR, samplesReceivedPed, samplesReceivedST, samplesReceivedUV, SkinTempFinal);
                 }
             }
             catch (Exception ex)
