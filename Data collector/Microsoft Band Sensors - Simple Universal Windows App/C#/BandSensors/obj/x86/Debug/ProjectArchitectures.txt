@@ -1,0 +1,1 @@
+C:\Users\denni\OneDrive\Documents\Year 3\Term 2\IGEN 330\Thermasleep_Repo\Data collector\Microsoft Band Sensors - Simple Universal Windows App\C#\BandSensors\BandSensors.csproj;x86
