@@ -1,1 +1,1 @@
-C:\Users\Andy L\Documents\UBC Third year\2nd semester\IGEN 330\Thermasleep_Repo\ZIPPED - Microsoft Band Sensors\C#\BandSensors\BandSensors.csproj;x86
+C:\Users\Andy L\Desktop\Thermasleep_Repo\Data processor (andy and melvin)\Andy's SDK app\ZIPPED - Microsoft Band Sensors\C#\BandSensors\BandSensors.csproj;x86

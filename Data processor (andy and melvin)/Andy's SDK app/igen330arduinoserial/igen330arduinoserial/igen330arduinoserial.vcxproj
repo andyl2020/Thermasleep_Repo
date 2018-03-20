@@ -93,7 +93,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
     </ClCompile>
     <Link>
-      <AdditionalDependencies />
+      <AdditionalDependencies>C:\Users\Andy L\Desktop\Thermasleep_Repo\Data processor (andy and melvin)\Andy's SDK app\ZIPPED - Microsoft Band Sensors\C#\BandSensors\bin\x86\Debug\AppX\andytest1.txt;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Console</SubSystem>
     </Link>
   </ItemDefinitionGroup>
@@ -137,6 +137,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="..\..\..\Andy%27s SDK app\ZIPPED - Microsoft Band Sensors\C#\BandSensors\bin\x86\Debug\AppX\andytest1.txt" />
+    <Text Include="textfile.txt" />
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>

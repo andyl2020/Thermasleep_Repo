@@ -27,6 +27,10 @@ using Windows.UI.Core;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
+
+
+
+
 namespace BandSensors
 {
     /// <summary>
@@ -40,6 +44,7 @@ namespace BandSensors
         }
 
         private bool IsRunning = false;
+
 
         private async void ButtonRun_Click(object sender, RoutedEventArgs e)
         {
@@ -78,6 +83,7 @@ namespace BandSensors
                     int samplesReceivedPed = 0; // the number of Pedometer samples received
                     int samplesReceivedST = 0; // the number of SkinTemperature samples received
                     int samplesReceivedUV = 0; // the number of UV samples received
+                    //int tempsamples
 
                     // Subscribe to Accelerometer data.
                     bandClient.SensorManager.Accelerometer.ReadingChanged += (s, args) =>
@@ -195,7 +201,7 @@ namespace BandSensors
                     await bandClient.SensorManager.UV.StartReadingsAsync();
 
                     // Receive sensor data for a while
-                    await Task.Delay(TimeSpan.FromSeconds(10));
+                    await Task.Delay(TimeSpan.FromSeconds(2));
 
                     // Stop the sensor subscriptions
                     await bandClient.SensorManager.Accelerometer.StopReadingsAsync();
@@ -208,15 +214,35 @@ namespace BandSensors
                     await bandClient.SensorManager.SkinTemperature.StopReadingsAsync();
                     await bandClient.SensorManager.UV.StopReadingsAsync();
 
+
+                    // Example #2: Write one string to a text file.
+                    string text = "A class is the most powerful data type in C#. Like a structure, " +
+                                   "a class defines the data and behavior of the data type. ";
+                    // WriteAllText creates a file, writes the specified string to the file,
+                    // and then closes the file.    You do NOT need to call Flush() or Close().
+                    // System.IO.File.WriteAllText(@"C:\Users\Andy L\Desktop\Thermasleep_Repo\andytest1.txt", text);
+                    System.IO.File.WriteAllText("andytest1.txt", text);
                     this.StatusMessage.Text = string.Format("Done.\n {0} Accelerometer samples received.\n {1} Calories samples received.\n {2} Contact samples received.\n {3} Distance samples received.\n {4} Gyroscope samples received.\n {5} HeartRate samples received.\n {6} Pedometer samples received.\n {7} SkinTemperature samples received.\n {8} UV samples received.", samplesReceivedAcc, samplesReceivedCal, samplesReceivedCon, samplesReceivedDist, samplesReceivedGyro, samplesReceivedHR, samplesReceivedPed, samplesReceivedST, samplesReceivedUV);
                 }
+                               
             }
+                       
+
             catch (Exception ex)
+
+            
             {
                 this.StatusMessage.Text = ex.ToString();
             }
             IsRunning = false;
             this.ButtonRun.IsEnabled = true;
+            
+           
         }
+
     }
+
+    
 }
+
+

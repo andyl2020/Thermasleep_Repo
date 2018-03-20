@@ -1,2 +1,1 @@
-﻿  igen330arduinoserial.cpp
-  igen330arduinoserial.vcxproj -> C:\Users\Andy L\source\repos\igen330arduinoserial\Debug\igen330arduinoserial.exe
+﻿LINK : fatal error LNK1104: cannot open file 'gdi32.lib'
