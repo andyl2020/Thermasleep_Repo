@@ -24,9 +24,17 @@ using Microsoft.Band.Sensors;
 using System.Threading.Tasks;
 using Windows.ApplicationModel.Core;
 using Windows.UI.Core;
+//added:
+using Windows.Devices.SerialCommunication;
+using Windows.Devices.Enumeration;
+using Windows.Storage.Streams;
+
+
+
+
+
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
-
 
 
 
@@ -83,7 +91,7 @@ namespace BandSensors
                     int samplesReceivedPed = 0; // the number of Pedometer samples received
                     int samplesReceivedST = 0; // the number of SkinTemperature samples received
                     int samplesReceivedUV = 0; // the number of UV samples received
-                    //int tempsamples
+                    double tempval = 0; //melvin
 
                     // Subscribe to Accelerometer data.
                     bandClient.SensorManager.Accelerometer.ReadingChanged += (s, args) =>
@@ -184,6 +192,8 @@ namespace BandSensors
                         IBandSkinTemperatureReading readings = args.SensorReading;
                         CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => {
                             this.txtSkinTemp.Text = readings.Temperature.ToString();
+                            tempval = readings.Temperature; //melvin
+
                         });
                     };
                     await bandClient.SensorManager.SkinTemperature.StartReadingsAsync();
@@ -215,14 +225,49 @@ namespace BandSensors
                     await bandClient.SensorManager.UV.StopReadingsAsync();
 
 
+
+                    //try acccessing the serial port directly: 
+                    //source: https://stackoverflow.com/questions/36380925/how-to-write-serial-data-to-com-ports-with-universal-windows-application
+
+
+                    string selector = SerialDevice.GetDeviceSelector("COM10");
+                    DeviceInformationCollection devices = await DeviceInformation.FindAllAsync(selector);
+                    if (devices.Count > 0)
+                    {
+                        DeviceInformation deviceInfo = devices[0];
+                        SerialDevice serialDevice = await SerialDevice.FromIdAsync(deviceInfo.Id);
+                        serialDevice.BaudRate = 9600;
+                        serialDevice.DataBits = 8;
+                        serialDevice.StopBits = SerialStopBitCount.Two;
+                        serialDevice.Parity = SerialParity.None;
+
+                        DataWriter dataWriter = new DataWriter(serialDevice.OutputStream);
+
+                        dataWriter.WriteString("A");
+                        await dataWriter.StoreAsync();
+                        dataWriter.DetachStream();
+                        dataWriter = null;
+                    }
+                    else
+                    {
+                        //MessageDialog popup = new MessageDialog("Sorry, no device found.");
+                        //await popup.ShowAsync();
+                    }
+
+
+
+
+
+
                     // Example #2: Write one string to a text file.
-                    string text = "A class is the most powerful data type in C#. Like a structure, " +
-                                   "a class defines the data and behavior of the data type. ";
+                    /*string text = "a ssclass is the most powerful data type in C#. Like a structure, " +
+                                   "a class defines the data and behavior of the data type. "; */
+                    //string text = "33";
                     // WriteAllText creates a file, writes the specified string to the file,
                     // and then closes the file.    You do NOT need to call Flush() or Close().
-                    // System.IO.File.WriteAllText(@"C:\Users\Andy L\Desktop\Thermasleep_Repo\andytest1.txt", text);
-                    System.IO.File.WriteAllText("andytest1.txt", text);
-                    this.StatusMessage.Text = string.Format("Done.\n {0} Accelerometer samples received.\n {1} Calories samples received.\n {2} Contact samples received.\n {3} Distance samples received.\n {4} Gyroscope samples received.\n {5} HeartRate samples received.\n {6} Pedometer samples received.\n {7} SkinTemperature samples received.\n {8} UV samples received.", samplesReceivedAcc, samplesReceivedCal, samplesReceivedCon, samplesReceivedDist, samplesReceivedGyro, samplesReceivedHR, samplesReceivedPed, samplesReceivedST, samplesReceivedUV);
+                    //System.IO.File.WriteAllText(@"C:\Users\Andy L\Desktop\Thermasleep_Repo\andytest2.txt", text);
+                    //System.IO.File.WriteAllText("andytest1.txt", text);
+                    this.StatusMessage.Text = string.Format("Done.\n {0} Accelerometer samples received.\n {1} Calories samples received.\n {2} Contact samples received.\n {3} Distance samples received.\n {4} Gyroscope samples received.\n {5} HeartRate samples received.\n {6} Pedometer samples received.\n {7} SkinTemperature samples received.\n {8} UV samples received. temp data {9}", samplesReceivedAcc, samplesReceivedCal, samplesReceivedCon, samplesReceivedDist, samplesReceivedGyro, samplesReceivedHR, samplesReceivedPed, samplesReceivedST, samplesReceivedUV, tempval);
                 }
                                
             }
