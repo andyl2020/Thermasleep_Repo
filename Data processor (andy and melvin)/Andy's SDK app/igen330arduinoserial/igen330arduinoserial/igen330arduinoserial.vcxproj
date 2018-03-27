@@ -24,7 +24,11 @@
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <Keyword>ManagedCProj</Keyword>
     <RootNamespace>igen330arduinoserial</RootNamespace>
+<<<<<<< HEAD
     <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
+=======
+    <WindowsTargetPlatformVersion>10.0.10240.0</WindowsTargetPlatformVersion>
+>>>>>>> 7738d9ba8e7c67fa3a0335a6b670a4151d29cd5b
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -93,7 +97,10 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
     </ClCompile>
     <Link>
+<<<<<<< HEAD
       <AdditionalDependencies />
+=======
+>>>>>>> 7738d9ba8e7c67fa3a0335a6b670a4151d29cd5b
       <SubSystem>Console</SubSystem>
     </Link>
   </ItemDefinitionGroup>
@@ -137,6 +144,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
+=======
+    <Text Include="..\..\..\Andy%27s SDK app\ZIPPED - Microsoft Band Sensors\C#\BandSensors\bin\x86\Debug\AppX\andytest1.txt" />
+    <Text Include="textfile.txt" />
+>>>>>>> 7738d9ba8e7c67fa3a0335a6b670a4151d29cd5b
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>

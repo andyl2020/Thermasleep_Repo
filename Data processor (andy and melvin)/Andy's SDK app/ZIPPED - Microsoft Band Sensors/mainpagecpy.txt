@@ -1,4 +1,4 @@
-﻿/*
+/*
     Copyright (c) Xpert360 Ltd All rights reserved.  
  
     MIT License: 
@@ -24,11 +24,6 @@ using Microsoft.Band.Sensors;
 using System.Threading.Tasks;
 using Windows.ApplicationModel.Core;
 using Windows.UI.Core;
-<<<<<<< HEAD
-
-// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
-
-=======
 //added:
 using Windows.Devices.SerialCommunication;
 using Windows.Devices.Enumeration;
@@ -44,7 +39,6 @@ using Windows.Storage.Streams;
 
 
 
->>>>>>> 7738d9ba8e7c67fa3a0335a6b670a4151d29cd5b
 namespace BandSensors
 {
     /// <summary>
@@ -59,10 +53,7 @@ namespace BandSensors
 
         private bool IsRunning = false;
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 7738d9ba8e7c67fa3a0335a6b670a4151d29cd5b
         private async void ButtonRun_Click(object sender, RoutedEventArgs e)
         {
             if (IsRunning)
@@ -100,10 +91,11 @@ namespace BandSensors
                     int samplesReceivedPed = 0; // the number of Pedometer samples received
                     int samplesReceivedST = 0; // the number of SkinTemperature samples received
                     int samplesReceivedUV = 0; // the number of UV samples received
-<<<<<<< HEAD
+<<<<<<< HEAD:Data collector/Microsoft Band Sensors - Simple Universal Windows App/C#/BandSensors/MainPage.xaml.cs
+                    double SkinTempFinal = 0; 
 =======
                     double tempval = 0; //melvin
->>>>>>> 7738d9ba8e7c67fa3a0335a6b670a4151d29cd5b
+>>>>>>> 7738d9ba8e7c67fa3a0335a6b670a4151d29cd5b:Data processor (andy and melvin)/Andy's SDK app/ZIPPED - Microsoft Band Sensors/mainpagecpy.txt
 
                     // Subscribe to Accelerometer data.
                     bandClient.SensorManager.Accelerometer.ReadingChanged += (s, args) =>
@@ -202,13 +194,16 @@ namespace BandSensors
                     {
                         samplesReceivedST++;
                         IBandSkinTemperatureReading readings = args.SensorReading;
+                        
                         CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => {
                             this.txtSkinTemp.Text = readings.Temperature.ToString();
-<<<<<<< HEAD
+<<<<<<< HEAD:Data collector/Microsoft Band Sensors - Simple Universal Windows App/C#/BandSensors/MainPage.xaml.cs
+                            SkinTempFinal = readings.Temperature;
+
 =======
                             tempval = readings.Temperature; //melvin
+>>>>>>> 7738d9ba8e7c67fa3a0335a6b670a4151d29cd5b:Data processor (andy and melvin)/Andy's SDK app/ZIPPED - Microsoft Band Sensors/mainpagecpy.txt
 
->>>>>>> 7738d9ba8e7c67fa3a0335a6b670a4151d29cd5b
                         });
                     };
                     await bandClient.SensorManager.SkinTemperature.StartReadingsAsync();
@@ -226,11 +221,7 @@ namespace BandSensors
                     await bandClient.SensorManager.UV.StartReadingsAsync();
 
                     // Receive sensor data for a while
-<<<<<<< HEAD
-                    await Task.Delay(TimeSpan.FromSeconds(10));
-=======
                     await Task.Delay(TimeSpan.FromSeconds(2));
->>>>>>> 7738d9ba8e7c67fa3a0335a6b670a4151d29cd5b
 
                     // Stop the sensor subscriptions
                     await bandClient.SensorManager.Accelerometer.StopReadingsAsync();
@@ -243,11 +234,8 @@ namespace BandSensors
                     await bandClient.SensorManager.SkinTemperature.StopReadingsAsync();
                     await bandClient.SensorManager.UV.StopReadingsAsync();
 
-<<<<<<< HEAD
-                    this.StatusMessage.Text = string.Format("Done.\n {0} Accelerometer samples received.\n {1} Calories samples received.\n {2} Contact samples received.\n {3} Distance samples received.\n {4} Gyroscope samples received.\n {5} HeartRate samples received.\n {6} Pedometer samples received.\n {7} SkinTemperature samples received.\n {8} UV samples received.", samplesReceivedAcc, samplesReceivedCal, samplesReceivedCon, samplesReceivedDist, samplesReceivedGyro, samplesReceivedHR, samplesReceivedPed, samplesReceivedST, samplesReceivedUV);
-                }
-            }
-            catch (Exception ex)
+<<<<<<< HEAD:Data collector/Microsoft Band Sensors - Simple Universal Windows App/C#/BandSensors/MainPage.xaml.cs
+                    this.StatusMessage.Text = string.Format("Done.\n {0} Accelerometer samples received.\n {1} Calories samples received.\n {2} Contact samples received.\n {3} Distance samples received.\n {4} Gyroscope samples received.\n {5} HeartRate samples received.\n {6} Pedometer samples received.\n {7} SkinTemperature samples received.\n {8} UV samples received.\n skintemp data {9} ", samplesReceivedAcc, samplesReceivedCal, samplesReceivedCon, samplesReceivedDist, samplesReceivedGyro, samplesReceivedHR, samplesReceivedPed, samplesReceivedST, samplesReceivedUV, SkinTempFinal);
 =======
 
 
@@ -292,7 +280,8 @@ namespace BandSensors
                     // and then closes the file.    You do NOT need to call Flush() or Close().
                     //System.IO.File.WriteAllText(@"C:\Users\Andy L\Desktop\Thermasleep_Repo\andytest2.txt", text);
                     //System.IO.File.WriteAllText("andytest1.txt", text);
-                    this.StatusMessage.Text = string.Format("Done.\n {0} Accelerometer samples received.\n {1} Calories samples received.\n {2} Contact samples received.\n {3} Distance samples received.\n {4} Gyroscope samples received.\n {5} HeartRate samples received.\n {6} Pedometer samples received. {7} SkinTemperature samples received. {8} UV samples received. temp data {9}", samplesReceivedAcc, samplesReceivedCal, samplesReceivedCon, samplesReceivedDist, samplesReceivedGyro, samplesReceivedHR, samplesReceivedPed, samplesReceivedST, samplesReceivedUV, tempval);
+                    this.StatusMessage.Text = string.Format("Done.\n {0} Accelerometer samples received.\n {1} Calories samples received.\n {2} Contact samples received.\n {3} Distance samples received.\n {4} Gyroscope samples received.\n {5} HeartRate samples received.\n {6} Pedometer samples received.\n {7} SkinTemperature samples received.\n {8} UV samples received. temp data {9}", samplesReceivedAcc, samplesReceivedCal, samplesReceivedCon, samplesReceivedDist, samplesReceivedGyro, samplesReceivedHR, samplesReceivedPed, samplesReceivedST, samplesReceivedUV, tempval);
+>>>>>>> 7738d9ba8e7c67fa3a0335a6b670a4151d29cd5b:Data processor (andy and melvin)/Andy's SDK app/ZIPPED - Microsoft Band Sensors/mainpagecpy.txt
                 }
                                
             }
@@ -301,17 +290,11 @@ namespace BandSensors
             catch (Exception ex)
 
             
->>>>>>> 7738d9ba8e7c67fa3a0335a6b670a4151d29cd5b
             {
                 this.StatusMessage.Text = ex.ToString();
             }
             IsRunning = false;
             this.ButtonRun.IsEnabled = true;
-<<<<<<< HEAD
-        }
-    }
-}
-=======
             
            
         }
@@ -322,4 +305,3 @@ namespace BandSensors
 }
 
 
->>>>>>> 7738d9ba8e7c67fa3a0335a6b670a4151d29cd5b

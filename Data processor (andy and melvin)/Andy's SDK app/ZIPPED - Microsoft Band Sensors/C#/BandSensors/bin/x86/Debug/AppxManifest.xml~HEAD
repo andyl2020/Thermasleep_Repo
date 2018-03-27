@@ -37,11 +37,6 @@
         <Function Type="serviceId:C742E1A2-6320-5ABC-9643-D206C677E580" />
       </Device>
     </DeviceCapability>
-    <DeviceCapability Name="serialcommunication">
-      <Device Id="any">
-        <Function Type="name:serialPort" />
-      </Device>
-    </DeviceCapability>
   </Capabilities>
   <build:Metadata>
     <build:Item Name="TargetFrameworkMoniker" Value=".NETCore,Version=v5.0" />

@@ -15907,12 +15907,12 @@
   },
   "project": {
     "restore": {
-      "projectUniqueName": "C:\\Users\\Andy L\\Desktop\\Thermasleep_Repo\\Data processor (andy and melvin)\\Andy's SDK app\\ZIPPED - Microsoft Band Sensors\\C#\\BandSensors\\BandSensors.csproj",
+      "projectUniqueName": "C:\\Users\\Andy L\\Documents\\UBC Third year\\2nd semester\\IGEN 330\\Thermasleep_Repo\\ZIPPED - Microsoft Band Sensors\\C#\\BandSensors\\BandSensors.csproj",
       "projectName": "BandSensors",
-      "projectPath": "C:\\Users\\Andy L\\Desktop\\Thermasleep_Repo\\Data processor (andy and melvin)\\Andy's SDK app\\ZIPPED - Microsoft Band Sensors\\C#\\BandSensors\\BandSensors.csproj",
-      "projectJsonPath": "C:\\Users\\Andy L\\Desktop\\Thermasleep_Repo\\Data processor (andy and melvin)\\Andy's SDK app\\ZIPPED - Microsoft Band Sensors\\C#\\BandSensors\\project.json",
+      "projectPath": "C:\\Users\\Andy L\\Documents\\UBC Third year\\2nd semester\\IGEN 330\\Thermasleep_Repo\\ZIPPED - Microsoft Band Sensors\\C#\\BandSensors\\BandSensors.csproj",
+      "projectJsonPath": "C:\\Users\\Andy L\\Documents\\UBC Third year\\2nd semester\\IGEN 330\\Thermasleep_Repo\\ZIPPED - Microsoft Band Sensors\\C#\\BandSensors\\project.json",
       "packagesPath": "C:\\Users\\Andy L\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Andy L\\Desktop\\Thermasleep_Repo\\Data processor (andy and melvin)\\Andy's SDK app\\ZIPPED - Microsoft Band Sensors\\C#\\BandSensors\\obj\\",
+      "outputPath": "C:\\Users\\Andy L\\Documents\\UBC Third year\\2nd semester\\IGEN 330\\Thermasleep_Repo\\ZIPPED - Microsoft Band Sensors\\C#\\BandSensors\\obj\\",
       "projectStyle": "ProjectJson",
       "configFilePaths": [
         "C:\\Users\\Andy L\\AppData\\Roaming\\NuGet\\NuGet.Config",

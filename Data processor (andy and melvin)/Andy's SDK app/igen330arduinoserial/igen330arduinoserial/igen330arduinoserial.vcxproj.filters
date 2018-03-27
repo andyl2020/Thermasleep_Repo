@@ -16,6 +16,15 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
+<<<<<<< HEAD
+=======
+    <Text Include="textfile.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="..\..\..\Andy%27s SDK app\ZIPPED - Microsoft Band Sensors\C#\BandSensors\bin\x86\Debug\AppX\andytest1.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+>>>>>>> 7738d9ba8e7c67fa3a0335a6b670a4151d29cd5b
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
