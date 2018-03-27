@@ -267,7 +267,7 @@ namespace BandSensors
                     // and then closes the file.    You do NOT need to call Flush() or Close().
                     //System.IO.File.WriteAllText(@"C:\Users\Andy L\Desktop\Thermasleep_Repo\andytest2.txt", text);
                     //System.IO.File.WriteAllText("andytest1.txt", text);
-                    this.StatusMessage.Text = string.Format("Done.\n {0} Accelerometer samples received.\n {1} Calories samples received.\n {2} Contact samples received.\n {3} Distance samples received.\n {4} Gyroscope samples received.\n {5} HeartRate samples received.\n {6} Pedometer samples received.\n {7} SkinTemperature samples received.\n {8} UV samples received. temp data {9}", samplesReceivedAcc, samplesReceivedCal, samplesReceivedCon, samplesReceivedDist, samplesReceivedGyro, samplesReceivedHR, samplesReceivedPed, samplesReceivedST, samplesReceivedUV, tempval);
+                    this.StatusMessage.Text = string.Format("Done.\n {0} Accelerometer samples received.\n {1} Calories samples received.\n {2} Contact samples received.\n {3} Distance samples received.\n {4} Gyroscope samples received.\n {5} HeartRate samples received.\n {6} Pedometer samples received. {7} SkinTemperature samples received. {8} UV samples received. temp data {9}", samplesReceivedAcc, samplesReceivedCal, samplesReceivedCon, samplesReceivedDist, samplesReceivedGyro, samplesReceivedHR, samplesReceivedPed, samplesReceivedST, samplesReceivedUV, tempval);
                 }
                                
             }

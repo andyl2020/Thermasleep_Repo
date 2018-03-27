@@ -31,13 +31,13 @@
     <AppXManifest Include="C:\Users\Andy L\Desktop\Thermasleep_Repo\Data processor %28andy and melvin%29\Andy%27s SDK app\ZIPPED - Microsoft Band Sensors\C#\BandSensors\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-03-26T18:22:03.301</Modified>
+      <Modified>2018-03-26T22:32:11.830</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Andy L\Desktop\Thermasleep_Repo\Data processor %28andy and melvin%29\Andy%27s SDK app\ZIPPED - Microsoft Band Sensors\C#\BandSensors\bin\x86\Debug\BandSensors.exe">
       <PackagePath>entrypoint\BandSensors.exe</PackagePath>
-      <Modified>2018-03-26T18:22:02.867</Modified>
+      <Modified>2018-03-26T22:32:11.295</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andy L\.nuget\packages\Microsoft.ApplicationInsights\1.0.0\lib\portable-win81+wpa81\Microsoft.ApplicationInsights.dll">
       <PackagePath>Microsoft.ApplicationInsights.dll</PackagePath>
@@ -556,7 +556,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andy L\Desktop\Thermasleep_Repo\Data processor %28andy and melvin%29\Andy%27s SDK app\ZIPPED - Microsoft Band Sensors\C#\BandSensors\bin\x86\Debug\Core\BandSensors.exe">
       <PackagePath>BandSensors.exe</PackagePath>
-      <Modified>2018-03-26T18:22:03.295</Modified>
+      <Modified>2018-03-26T22:32:11.823</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
